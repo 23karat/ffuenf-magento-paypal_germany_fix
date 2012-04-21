@@ -1,0 +1,3 @@
+Core/Model/Store.php          app/code/local/Mage/Core/Model/Store.php
+Paypal/Model/Ipn.php          app/code/local/Mage/Paypal/Model/Ipn.php
+Sales/Model/Order/Payment.php          app/code/local/Mage/Sales/Model/Order/Payment.php
