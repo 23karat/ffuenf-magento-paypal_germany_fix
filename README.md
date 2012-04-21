@@ -15,8 +15,8 @@ Please use with caution! Currently this temporary fix disables fraud detection m
 Bug reports
 -----------
 
-# http://www.magentocommerce.com/boards/viewthread/222075/P60/#t384166
-# http://www.magentocommerce.com/bug-tracking/issue?issue=12685
++ http://www.magentocommerce.com/boards/viewthread/222075/P60/#t384166
++ http://www.magentocommerce.com/bug-tracking/issue?issue=12685
 
 Authors
 -------
