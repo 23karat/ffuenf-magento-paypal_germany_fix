@@ -1486,10 +1486,11 @@ class Mage_Sales_Model_Order_Payment extends Mage_Payment_Model_Info
 // trying to correct the issue with PayPal when using 4 decimals to round prices
 // paypal needs 2 decimals and amounts excl. tax (PayPal summs up taxes on their own!)
 // CAUTION currently this results also in wrong amounts (suspected fraud)! so we disabled fraud checks manually
-		protected function _isCaptureFinal($amountToCapture) {
+protected function _isCaptureFinal($amountToCapture) {
 			$amountToCapture = $this->_formatAmount($amountToCapture, true);
-			$orderGrandTotal = sprintf('%.2F', $this->getOrder()->getBaseGrandTotal()); 
-			if ($orderGrandTotal == sprintf('%.2F', ($this->getBaseAmountPaid() + $amountToCapture))) { 
+			$orderGrandTotal =  $this->getOrder()->getBaseGrandTotal();			
+			// 23karat according to http://www.magentocommerce.com/boards/viewthread/222075/P30/#t320445
+			if (abs($orderGrandTotal - ($this->getBaseAmountPaid() + $amountToCapture)) <= 0.01) { 
 				if (false !== $this->getShouldCloseParentTransaction()) {
 					$this->setShouldCloseParentTransaction(true);
 				}
